@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
-using SocketCommunication.PipeData;
 using System.IO;
 
-namespace SocketCommunication.TcpSocket
+namespace WSSocket
 {
     public class TcpClientEx
     {
@@ -105,6 +104,7 @@ namespace SocketCommunication.TcpSocket
 
             #endregion
         }
+        /*
         public TProtocol GetResolveType()
         {
             return (TProtocol)_fullrecvdata[1];
@@ -124,7 +124,7 @@ namespace SocketCommunication.TcpSocket
             //command//此处添加属性
             clientdispatcher.Run();
         }
-
+        */
         public void Close()
         {
             if (_clientSocket != null)

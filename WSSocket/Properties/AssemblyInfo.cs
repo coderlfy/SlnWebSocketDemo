@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SocketLib")]
+[assembly: AssemblyTitle("WSSocket")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SocketLib")]
+[assembly: AssemblyProduct("WSSocket")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("e4d07baa-a6d5-46cf-a01d-f15df1e5ba9a")]
+[assembly: Guid("c6293476-11e9-45e9-b947-ac6a2fd0565a")]
 
 // 程序集的版本信息由下面四个值组成: 
 //

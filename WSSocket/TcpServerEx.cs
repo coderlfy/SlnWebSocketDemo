@@ -14,10 +14,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Collections;
 using System.Threading;
-using SocketCommunication.Error;
-using SocketCommunication.Cache;
 
-namespace SocketCommunication.TcpSocket
+namespace WSSocket
 {
 
     public class TcpServer
@@ -31,10 +29,6 @@ namespace SocketCommunication.TcpSocket
         /// </summary>
         private byte[] _recvDataBuffer = new byte[2048];
         /// <summary>
-        /// 同步执行插入客户端列表锁
-        /// </summary>
-        private readonly static object InsertClientLock = true;
-        /// <summary>
         /// 
         /// </summary>
         private readonly static object WriteErrorLogLock = true;
@@ -42,8 +36,17 @@ namespace SocketCommunication.TcpSocket
         /// 
         /// </summary>
         //public delegate void ErrorHandler(object sender, ErrorEventArgs e);
-        public event EventHandler<ErrorEventArgs> OnError = null;
+        //public event EventHandler<ErrorEventArgs> OnError = null;
         private Thread _thdReceive = null;
+
+        private AbstractReceiver _receiver;
+
+        public AbstractReceiver _Receiver
+        {
+            get { return _receiver; }
+            set { _receiver = value; }
+        }
+        
         /// <summary>
         /// 获取服务端IP列表
         /// </summary>
@@ -67,11 +70,13 @@ namespace SocketCommunication.TcpSocket
         private void writeError(Exception e)
         {
             #region
+            /*
             lock (WriteErrorLogLock)
             {
                 if (OnError != null)
                     OnError(this, new ErrorEventArgs { SocketException = e });
             }
+             * */
             #endregion
         }
         /// <summary>
@@ -84,7 +89,8 @@ namespace SocketCommunication.TcpSocket
             #region
             try
             {
-                CustomerCollector.Init();
+                //CustomerCollector.Init();
+                //写入线程
                 IPEndPoint localEP = new IPEndPoint(IPAddress.Any, serverPort);
                 _tcpServer = new Socket(localEP.Address.AddressFamily, 
                     SocketType.Stream, ProtocolType.Tcp);
@@ -95,7 +101,7 @@ namespace SocketCommunication.TcpSocket
                 _thdReceive.IsBackground = true;
                 _thdReceive.Start();
 
-                (new TcpOnlineListener()).Start();
+                //(new TcpOnlineListener()).Start();
                 return true;
             }
             catch (Exception e)
@@ -163,6 +169,8 @@ namespace SocketCommunication.TcpSocket
             Buffer.BlockCopy(_recvDataBuffer, 0, temp, 0, cacheLength);
             IPEndPoint endremotepoint = (System.Net.IPEndPoint)client.RemoteEndPoint;
 
+
+            /*
             TcpServerDispatcher tcpdispatcher = new TcpServerDispatcher(client);
             tcpdispatcher._UserData = new CustomerByteData
             {
@@ -174,10 +182,12 @@ namespace SocketCommunication.TcpSocket
                 }
             };
             viewTempToConsole(tcpdispatcher);
-            return tcpdispatcher.Run();
+             * tcpdispatcher.Run();
+             * */
+            return true;
             #endregion
         }
-
+        /*
         /// <summary>
         /// 
         /// </summary>
@@ -202,6 +212,7 @@ namespace SocketCommunication.TcpSocket
             Console.WriteLine(viewcontent);
             #endregion
         }
+         * */
         /// <summary>
         /// 从客户端接收信息
         /// </summary>
@@ -229,7 +240,7 @@ namespace SocketCommunication.TcpSocket
             }
             catch (SocketException e)
             {
-                CustomerCollector.Remove(client);
+                //CustomerCollector.Remove(client);
                 this.writeError(e);
             }
             catch (Exception e)

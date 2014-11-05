@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServer", "WSServer\WSServer.csproj", "{CBEF0ACF-C1F4-4D47-AA35-AC5117D52657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketCommunication", "SocketCommunication\SocketCommunication.csproj", "{89B53963-F4D0-4104-8FF2-34D4A1E4B4DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSSocket", "WSSocket\WSSocket.csproj", "{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{CBEF0ACF-C1F4-4D47-AA35-AC5117D52657}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBEF0ACF-C1F4-4D47-AA35-AC5117D52657}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBEF0ACF-C1F4-4D47-AA35-AC5117D52657}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89B53963-F4D0-4104-8FF2-34D4A1E4B4DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89B53963-F4D0-4104-8FF2-34D4A1E4B4DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89B53963-F4D0-4104-8FF2-34D4A1E4B4DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89B53963-F4D0-4104-8FF2-34D4A1E4B4DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
