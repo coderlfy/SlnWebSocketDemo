@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WSSocket
 {
-    class WSServerReceiver: AbstractReceiver
+    class WSServerSwitcher: AbstractSwitcher
     {
         public override bool Execute()
         {

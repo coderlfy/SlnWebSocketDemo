@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnStartService = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnStartService
+            // 
+            this.btnStartService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnStartService.Location = new System.Drawing.Point(0, 0);
+            this.btnStartService.Name = "btnStartService";
+            this.btnStartService.Size = new System.Drawing.Size(265, 52);
+            this.btnStartService.TabIndex = 0;
+            this.btnStartService.Text = "开启服务";
+            this.btnStartService.UseVisualStyleBackColor = true;
+            this.btnStartService.Click += new System.EventHandler(this.btnStartService_Click);
+            // 
+            // frmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(265, 52);
+            this.Controls.Add(this.btnStartService);
+            this.Name = "frmMain";
+            this.Text = "WebSocket服务端";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnStartService;
     }
 }
 

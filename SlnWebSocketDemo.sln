@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSServer", "WSServer\WSServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSSocket", "WSSocket\WSSocket.csproj", "{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat", "WebChat\WebChat.csproj", "{36C68722-2E3C-46D1-B171-72C9DF1C106B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4D1CBBA-175A-4604-9AEE-C99F5A9AC4C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C68722-2E3C-46D1-B171-72C9DF1C106B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C68722-2E3C-46D1-B171-72C9DF1C106B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C68722-2E3C-46D1-B171-72C9DF1C106B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C68722-2E3C-46D1-B171-72C9DF1C106B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

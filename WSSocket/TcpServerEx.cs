@@ -18,7 +18,7 @@ using System.Threading;
 namespace WSSocket
 {
 
-    public class TcpServer
+    public class TcpServerEx
     {
         /// <summary>
         /// 服务器端的监听器
@@ -39,9 +39,9 @@ namespace WSSocket
         //public event EventHandler<ErrorEventArgs> OnError = null;
         private Thread _thdReceive = null;
 
-        private AbstractReceiver _receiver;
+        private AbstractSwitcher _receiver;
 
-        public AbstractReceiver _Receiver
+        public AbstractSwitcher _Receiver
         {
             get { return _receiver; }
             set { _receiver = value; }
@@ -89,18 +89,23 @@ namespace WSSocket
             #region
             try
             {
+                new Thread(new ThreadStart(delegate { 
+                    IPEndPoint localEP = new IPEndPoint(IPAddress.Any, serverPort);
+                    _tcpServer = new Socket(localEP.Address.AddressFamily, 
+                        SocketType.Stream, ProtocolType.Tcp);
+                    _tcpServer.Bind(localEP);
+                    _tcpServer.Listen(100);
+                    receiveSocket();
+                })){
+                    IsBackground = true,
+                }.Start();
                 //CustomerCollector.Init();
                 //写入线程
-                IPEndPoint localEP = new IPEndPoint(IPAddress.Any, serverPort);
-                _tcpServer = new Socket(localEP.Address.AddressFamily, 
-                    SocketType.Stream, ProtocolType.Tcp);
-                _tcpServer.Bind(localEP);
-                _tcpServer.Listen(100);
-
+                /*
                 _thdReceive = new Thread(new ThreadStart(receiveSocket));
                 _thdReceive.IsBackground = true;
                 _thdReceive.Start();
-
+                */
                 //(new TcpOnlineListener()).Start();
                 return true;
             }
@@ -165,11 +170,14 @@ namespace WSSocket
         private bool dispatcher(Socket client, int cacheLength)
         {
             #region
+            bool clientsuspend = true;
             byte[] temp = new byte[cacheLength];
             Buffer.BlockCopy(_recvDataBuffer, 0, temp, 0, cacheLength);
             IPEndPoint endremotepoint = (System.Net.IPEndPoint)client.RemoteEndPoint;
 
-
+            if (_Receiver != null)
+                clientsuspend = _Receiver.Execute();
+                
             /*
             TcpServerDispatcher tcpdispatcher = new TcpServerDispatcher(client);
             tcpdispatcher._UserData = new CustomerByteData
@@ -184,7 +192,7 @@ namespace WSSocket
             viewTempToConsole(tcpdispatcher);
              * tcpdispatcher.Run();
              * */
-            return true;
+            return clientsuspend;
             #endregion
         }
         /*
