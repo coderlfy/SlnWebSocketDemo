@@ -24,6 +24,13 @@ namespace WSSocket
         /// 服务器端的监听器
         /// </summary>
         private Socket _tcpServer = null;
+        private bool _isSuccess = false;
+
+        public bool _IsSuccessStarted
+        {
+            get { return _isSuccess = false; }
+        }
+        
         /// <summary>
         /// 保存接收到的数据（字节数组）
         /// </summary>
@@ -37,7 +44,7 @@ namespace WSSocket
         /// </summary>
         //public delegate void ErrorHandler(object sender, ErrorEventArgs e);
         //public event EventHandler<ErrorEventArgs> OnError = null;
-        private Thread _thdReceive = null;
+        //private Thread _thdReceive = null;
 
         private AbstractSwitcher _receiver;
 
@@ -99,13 +106,14 @@ namespace WSSocket
                 })){
                     IsBackground = true,
                 }.Start();
+                _isSuccess = true;
                 //CustomerCollector.Init();
                 //写入线程
-                /*
-                _thdReceive = new Thread(new ThreadStart(receiveSocket));
-                _thdReceive.IsBackground = true;
-                _thdReceive.Start();
-                */
+                
+                //_thdReceive = new Thread(new ThreadStart(receiveSocket));
+                //_thdReceive.IsBackground = true;
+                //_thdReceive.Start();
+                
                 //(new TcpOnlineListener()).Start();
                 return true;
             }
@@ -176,8 +184,11 @@ namespace WSSocket
             IPEndPoint endremotepoint = (System.Net.IPEndPoint)client.RemoteEndPoint;
 
             if (_Receiver != null)
+            {
+                _Receiver._Data = temp;
+                _Receiver._Client = client;
                 clientsuspend = _Receiver.Execute();
-                
+            } 
             /*
             TcpServerDispatcher tcpdispatcher = new TcpServerDispatcher(client);
             tcpdispatcher._UserData = new CustomerByteData
