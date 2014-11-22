@@ -14,7 +14,6 @@ namespace WSSocket
             if (base._Data != null)
             {
                 string handShakeText = Encoding.UTF8.GetString(base._Data);
-                Console.WriteLine(handShakeText);
                 if (handShakeText.IndexOf("<policy-file-request/>") != -1)
                     base.PostBack(Encoding.UTF8.GetBytes(webflashpolicy));
             }

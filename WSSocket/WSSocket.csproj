@@ -39,12 +39,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractReceiver.cs" />
+    <Compile Include="AbstractSender.cs" />
     <Compile Include="AbstractSwitcher.cs" />
+    <Compile Include="BusinessDataPackage.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FirstLevelProtocal.cs" />
     <Compile Include="FlashAuthSwitcher.cs" />
+    <Compile Include="MessageSystem\Customer.cs" />
+    <Compile Include="MessageSystem\CustomerCollector.cs" />
+    <Compile Include="MessageSystem\ReceiverBeatToOnline.cs" />
+    <Compile Include="MessageSystem\ReceiverLogon.cs" />
+    <Compile Include="MessageSystem\ReceiverLoudly.cs" />
+    <Compile Include="MessageSystem\SenderLogon.cs" />
+    <Compile Include="MessageSystem\SenderLoudly.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecondLevelProtocal.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TcpClientEx.cs" />
     <Compile Include="TcpServerEx.cs" />
-    <Compile Include="WSServerSwitcher.cs" />
+    <Compile Include="WebSocketHandler.cs" />
+    <Compile Include="WSServerSwitcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

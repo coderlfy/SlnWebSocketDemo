@@ -1,10 +1,10 @@
 ﻿/****************************************
-###创建人：bhlfy
-###创建时间：2011-09-14
-###公司：ICat科技
+###创建人：lify
+###创建时间：2014-11-20
+###公司：龙浩通信公司
 ###最后修改时间：2011-09-14
-###最后修改人：bhlfy
-###修改摘要：
+###最后修改人：lify
+###内容：websocket服务端入口
 ****************************************/
 using System;
 using System.Collections.Generic;
@@ -102,19 +102,15 @@ namespace WSSocket
                         SocketType.Stream, ProtocolType.Tcp);
                     _tcpServer.Bind(localEP);
                     _tcpServer.Listen(100);
+
+                    if (_Receiver != null) 
+                        _Receiver.StartOnlineCheck();
+
                     receiveSocket();
                 })){
                     IsBackground = true,
                 }.Start();
                 _isSuccess = true;
-                //CustomerCollector.Init();
-                //写入线程
-                
-                //_thdReceive = new Thread(new ThreadStart(receiveSocket));
-                //_thdReceive.IsBackground = true;
-                //_thdReceive.Start();
-                
-                //(new TcpOnlineListener()).Start();
                 return true;
             }
             catch (Exception e)
@@ -259,7 +255,7 @@ namespace WSSocket
             }
             catch (SocketException e)
             {
-                //CustomerCollector.Remove(client);
+                _Receiver._ClientManager.Remove(client);
                 this.writeError(e);
             }
             catch (Exception e)
