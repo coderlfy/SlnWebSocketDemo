@@ -22,10 +22,10 @@ namespace WSSocket
             responseBuilder.Append("HTTP/1.1 101 Switching Protocols" + Environment.NewLine);
             responseBuilder.Append("Upgrade: websocket" + Environment.NewLine);
             responseBuilder.Append("Connection: Upgrade" + Environment.NewLine);
-            //responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine + Environment.NewLine);
+            responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine + Environment.NewLine);
             //如果把上一行换成下面两行，才是thewebsocketprotocol-17协议，但居然握手不成功，目前仍没弄明白！
-            responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine);
-            responseBuilder.Append("Sec-WebSocket-Protocol: MessageSystem" + Environment.NewLine + Environment.NewLine);
+            //responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine);
+            //responseBuilder.Append("Sec-WebSocket-Protocol: MessageSystem" + Environment.NewLine + Environment.NewLine);
 
             return Encoding.UTF8.GetBytes(responseBuilder.ToString());
         }
@@ -75,7 +75,7 @@ namespace WSSocket
 
             //获取协议数据的第二字节的后七位为负载数据的长度
             Int64 payload_len = recBytes[1] & 0x7F; // 数据长度  
-
+            Console.WriteLine("接收到的字长为：{0}", payload_len);
             byte[] masks = new byte[4];
             byte[] payload_data;
 

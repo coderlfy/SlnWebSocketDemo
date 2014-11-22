@@ -55,8 +55,8 @@ namespace WSSocket
                 contentBytes = new byte[temp.Length + 4];
                 contentBytes[0] = 0x81;
                 contentBytes[1] = 126;
-                contentBytes[2] = (byte)(temp.Length & 0xFF);
-                contentBytes[3] = (byte)(temp.Length >> 8 & 0xFF);
+                contentBytes[2] = (byte)(temp.Length >> 8 & 0xFF); //前8位
+                contentBytes[3] = (byte)(temp.Length & 0xFF); //后8位字节长度
                 Array.Copy(temp, 0, contentBytes, 4, temp.Length);
             }
             else

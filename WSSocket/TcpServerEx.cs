@@ -34,7 +34,7 @@ namespace WSSocket
         /// <summary>
         /// 保存接收到的数据（字节数组）
         /// </summary>
-        private byte[] _recvDataBuffer = new byte[2048];
+        private byte[] _recvDataBuffer = new byte[65535];
         /// <summary>
         /// 
         /// </summary>

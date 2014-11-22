@@ -1,5 +1,5 @@
 ﻿(function () {
-    var heartBeat = 10000;
+    var heartBeat = 100000;
     var hbTimer = undefined;
     var sysMsgRequestTimer = undefined;
     function keepAlive(sysmsg) {
