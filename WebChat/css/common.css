@@ -1,0 +1,194 @@
+﻿.icon-addRecord
+{
+    background-image: url(images/104.gif) !important;
+}
+.icon-editRecord
+{
+    background-image: url(images/106.gif) !important;
+}
+.icon-deleteRecord
+{
+    background-image: url(images/105.gif) !important;
+}
+.icon-queryRecord
+{
+    background-image: url(images/388.gif) !important;
+}
+.icon-convertpdfRecord
+{
+    background-image: url(images/162.gif) !important;
+}
+.icon-uploadfile
+{
+    background-image: url(images/163.gif) !important;
+}
+.icon-clearquerycondition
+{
+    background-image: url(images/155.gif) !important;
+}
+.icon-viewRecord
+{
+    background-image: url(images/107.gif) !important;
+}
+.icon-refreshRecord
+{
+    background-image: url(images/225.gif) !important;
+}
+.icon-chartline
+{
+    background-image: url(images/156.gif) !important;
+}
+.icon-chartpie
+{
+    background-image: url(images/157.gif) !important;
+}
+.icon-register
+{
+    background-image: url(images/071.gif) !important;
+}
+.icon-userregister
+{
+    background-image: url(images/392.gif) !important;
+}
+.icon-excel
+{
+    background-image: url(images/excel.png) !important;
+}
+.icon-config
+{
+    background-image: url(images/275.gif) !important;
+}
+.icon-downloadhelpdoc
+{
+    background-image: url(images/158.gif) !important;
+}
+.icon-warning
+{
+    background-image: url(images/icon-warning.png) !important;
+}
+.icon-lockedusbkey
+{
+    background-image: url(images/330.gif) !important;
+}
+.icon-adddocument
+{
+    background-image: url(images/121.gif) !important;
+}
+.icon-submittorating
+{
+    background-image: url(images/094.gif) !important;
+}
+.icon-documents
+{
+    background-image: url(images/204.gif) !important;
+}
+.icon-filterlocal
+{
+    background-image: url(images/098.gif) !important;
+}
+.icon-saverecord
+{
+    background-image: url(images/248.gif) !important;
+}
+/*鼠标经过的时候，grid里文字变粗体*/
+.x-grid-row-over .x-grid-cell-inner
+{
+    font-weight: bold;
+}
+/*gridpanel默认背景不为白色*/
+.x-define-panel-body
+{
+    background-color: #fff;
+}
+.customize-row-red .x-grid-cell {
+    background-color:#FFC9AE !important; 
+}
+/*业务模块需引用的样式*/
+.icon-giveoutusbkey
+{
+    background-image: url(images/391.gif) !important;
+}
+.icon-relevanceRating
+{
+    background-image: url(images/181.gif) !important;
+}
+.icon-reviewCompany
+{
+    background-image: url(images/174.gif) !important;
+}
+.exit-system
+{
+    background-image: url(images/114.gif) !important;
+}
+.icon-addkeyforuser
+{
+    background-image: url(images/357.gif) !important;
+}
+.icon-upload
+{
+    background-image: url(images/245.gif) !important;
+}
+.icon-uploadnecessarydocument
+{
+    background-image: url(images/044.gif) !important;
+}
+.icon-viewdocumentaudit
+{
+    background-image: url(images/216.gif) !important;
+}
+.icon-viewreviewopinion
+{
+    background-image: url(images/255.gif) !important;
+}
+.icon-reviewagain
+{
+    background-image: url(images/126.gif) !important;
+}
+.icon-stopreview
+{
+    background-image: url(images/125.gif) !important;
+}
+.icon-saveas
+{
+    background-image: url(images/043.gif) !important;
+}
+.icon-resetkey
+{
+    background-image: url(images/003.gif) !important;
+}
+.icon-excelexport
+{
+    background-image: url(images/excel.PNG) !important;
+}
+.icon-documenttoperson
+{
+    background-image: url(images/b066.gif) !important;
+}
+.icon-documentcopy
+{
+    background-image: url(images/copy.gif) !important;
+}
+.icon-documentok
+{
+    background-image: url(images/174.gif) !important;
+}
+.icon-delfilter
+{
+    background-image: url(images/125.gif) !important;
+}
+.icon-documentviewproc
+{
+    background-image: url(images/i_4.gif) !important;
+}
+.icon-documentispass
+{
+    background-image: url(images/203.gif) !important;
+}
+.icon-systeminformation
+{
+    background-image: url(/images/051.gif) !important;
+}
+.icon-broadcast
+{
+    background-image: url(/images/290.gif) !important;
+}
