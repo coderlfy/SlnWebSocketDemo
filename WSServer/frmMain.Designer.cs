@@ -49,7 +49,9 @@
             this.ClientSize = new System.Drawing.Size(265, 52);
             this.Controls.Add(this.btnStartService);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WebSocket服务端";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 
         }

@@ -12,6 +12,9 @@ namespace WSServer
 {
     public partial class frmMain : Form
     {
+        private static TcpServerEx _tcpFlashAuthServer = null;
+        private static TcpServerEx _tcpMsgServer = null;
+
         public frmMain()
         {
             InitializeComponent();
@@ -19,9 +22,26 @@ namespace WSServer
 
         private void btnStartService_Click(object sender, EventArgs e)
         {
-            TcpServerEx tcpserver = new TcpServerEx();
-            tcpserver._Receiver = new FlashAuthSwitcher();
-            tcpserver.StartListen(843);
+            if (!_tcpFlashAuthServer._IsSuccessStarted)
+                _tcpFlashAuthServer.StartListen(843);
+            if (!_tcpMsgServer._IsSuccessStarted)
+                _tcpMsgServer.StartListen(1818);
+            this.btnStartService.Enabled = false;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if (_tcpFlashAuthServer == null)
+            {
+                _tcpFlashAuthServer = new TcpServerEx();
+                _tcpFlashAuthServer._Receiver = new FlashAuthSwitcher();
+            }
+            if (_tcpMsgServer == null)
+            {
+                _tcpMsgServer = new TcpServerEx();
+                _tcpMsgServer._Receiver = new WSServerSwitcher();
+            }
+
         }
     }
 }
