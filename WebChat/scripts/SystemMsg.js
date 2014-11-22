@@ -183,9 +183,16 @@
                     });
 
                     broadcastwindow.show();
+                    var map = new Ext.util.KeyMap({
+                        target: broadcastwindow.getId(),
+                        binding: [{
+                            key: Ext.EventObject.ENTER,
+                            fn: edithandler.buttonsave
+                        }]
+                    });
 
                 }
-            }, '-', {
+            }/*, '-', {
                 xtype: 'button',
                 text: '系统消息',
                 iconCls: Sys.App.Icon.systeminformation,
@@ -193,7 +200,7 @@
                     if (me.sysMsg)
                         me.sysMsg.p2p('bbbbb', '你该走了！');
                 }
-            }/*, '-', {
+            }*//*, '-', {
                 xtype: 'tool',
                 type: 'close',
                 rtl: false,
