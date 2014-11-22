@@ -33,6 +33,7 @@
     chartpie: 'icon-chartpie',
     excelexport: 'icon-excelexport',
     userregister: 'icon-userregister',
+    login: 'icon-register',
     documenttoperson: 'icon-documenttoperson',
     documentok: 'icon-documentok',
     delfilter: 'icon-delfilter',

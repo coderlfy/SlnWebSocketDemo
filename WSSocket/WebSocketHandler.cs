@@ -25,7 +25,7 @@ namespace WSSocket
             //responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine + Environment.NewLine);
             //如果把上一行换成下面两行，才是thewebsocketprotocol-17协议，但居然握手不成功，目前仍没弄明白！
             responseBuilder.Append("Sec-WebSocket-Accept: " + secKeyAccept + Environment.NewLine);
-            responseBuilder.Append("Sec-WebSocket-Protocol: chat" + Environment.NewLine + Environment.NewLine);
+            responseBuilder.Append("Sec-WebSocket-Protocol: MessageSystem" + Environment.NewLine + Environment.NewLine);
 
             return Encoding.UTF8.GetBytes(responseBuilder.ToString());
         }

@@ -111,6 +111,8 @@
         var me = this;
         Ext.apply(opts, options);
         this.sysMsg = null;
+        this.userid = null;
+        this.fullname = null;
         var toolbar = Ext.widget({
             xtype: 'toolbar',
             border: true,
@@ -143,7 +145,7 @@
                             Ext.Msg.confirm('系统提示', '会被所有在线人员听到哦，您确认要喊吗？', function (y) {
                                 if (y == 'yes')
                                     if (me.sysMsg) {
-                                        me.sysMsg.loudly(content.getValue(), Sys.Paramters.userid);
+                                        me.sysMsg.loudly(content.getValue(), me.userid);
                                         broadcastwindow.close();
                                     }
                             }, this);
@@ -223,6 +225,7 @@
         this.setToolBar = function (fullname) {
             var lginfor = toolbar.down('#lbLogonInformation');
             lginfor.setText(Ext.String.format('用户【{0}】已登录！', fullname));
+            this.fullname = fullname;
         };
         this.init = function (userid) {
             me.sysMsg = new Sys.Msg({
@@ -240,6 +243,7 @@
                 }
             });
             me.sysMsg.init(userid);
+            this.userid = userid;
         };
     }
 })();

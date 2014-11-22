@@ -6646,6 +6646,7 @@
     <Content Include="images\upload-stop.gif" />
     <Content Include="media\WebSocketMain.swf" />
     <Content Include="scripts\Config.js" />
+    <Content Include="scripts\ExtExample.js" />
     <Content Include="scripts\ExtWebSocket.js" />
     <Content Include="scripts\FlashWebSocket.js" />
     <Content Include="scripts\Icons.js" />
